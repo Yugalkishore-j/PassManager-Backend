@@ -55,6 +55,6 @@ app.delete('/', async (req, res) => {
 });
 
 // Start server (for Render)
-app.listen(port || 5000, '0.0.0.0', () => {
+app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

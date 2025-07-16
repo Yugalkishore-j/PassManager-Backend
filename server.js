@@ -55,9 +55,4 @@ app.delete('/', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Error deleting password" });
   }
-});
-
-// Start server
-app.listen(port, () => {
-  console.log(`✅ Server running at ${PORT}`);
-});
+})

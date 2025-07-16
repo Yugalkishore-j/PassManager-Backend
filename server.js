@@ -26,7 +26,6 @@ const passwordSchema = new mongoose.Schema({
 const Password = mongoose.model('Password', passwordSchema);
 
 // Routes
-// Get all passwords
 app.get('/', async (req, res) => {
   try {
     const passwords = await Password.find({});
@@ -36,7 +35,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Add new password
 app.post('/', async (req, res) => {
   try {
     const newPassword = new Password(req.body);
@@ -47,7 +45,6 @@ app.post('/', async (req, res) => {
   }
 });
 
-// Delete password
 app.delete('/', async (req, res) => {
   try {
     await Password.deleteOne({ id: req.body.id });

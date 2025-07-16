@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("Mongo Error:", err));
 
-// Password Schema
+// Schema
 const passwordSchema = new mongoose.Schema({
   id: String,
   site: String,
@@ -52,4 +52,9 @@ app.delete('/', async (req, res) => {
   } catch (err) {
     res.status(500).json({ message: "Error deleting password" });
   }
-})
+});
+
+// Start server (for Render)
+app.listen(port || 5000, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
